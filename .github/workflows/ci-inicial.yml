@@ -1,4 +1,4 @@
-name: CI Básico
+name: CI Inicial
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: app/package-lock.json
+          cache-dependency-path: app\package-lock.json
       
       - name: Instalar dependências
         working-directory: app
