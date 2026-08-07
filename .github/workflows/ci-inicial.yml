@@ -31,6 +31,19 @@ jobs:
         working-directory: app
         run: npm test
       
+      - name: Excluir resultados
+        working-directory: app/test-results
+        run: rm -rvf junit.xml
+
+      - name: Publish Test Results / Publicar Resultado dos Testes
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: (!cancelled())
+        with:
+          files: |
+            test-results/**/*.xml
+            test-results/**/*.trx
+            test-results/**/*.json
+      
       - name: Lint
         working-directory: app
         run: npm run lint --if-present
