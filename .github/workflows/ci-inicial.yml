@@ -44,9 +44,9 @@ jobs:
         if: always()
         with:
           files: |
-            test-results/*.xml
-            test-results/*.trx
-            test-results/*.json
+            app/test-results/*.xml
+            app/test-results/*.trx
+            app/test-results/*.json
       
       - name: Lint
         working-directory: app
