@@ -32,7 +32,8 @@ jobs:
 
       - name: Executar testes
         working-directory: app
-        run: npm test -- --coverage
+        run: npm test -- --coverage --reporters=default --reporters=jest-junit
+
       
       #- name: Excluir resultados
       #  working-directory: app/test-results
@@ -43,9 +44,9 @@ jobs:
         if: always()
         with:
           files: |
-            test-results/**/*.xml
-            test-results/**/*.trx
-            test-results/**/*.json
+            test-results/*.xml
+            test-results/*.trx
+            test-results/*.json
       
       - name: Lint
         working-directory: app
