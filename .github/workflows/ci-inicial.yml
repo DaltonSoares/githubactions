@@ -37,7 +37,9 @@ jobs:
         working-directory: app
         run: npm test -- --coverage --reporters=default --reporters=jest-junit
 
-      
+      - name: Valindado diretoria
+        working-directory: app
+        run: pwd ; ls -ltr ; ls -ltr test-results
       #- name: Excluir resultados
       #  working-directory: app/test-results
       # # run: rm -rvf junit.xml
