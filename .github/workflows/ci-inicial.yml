@@ -49,7 +49,7 @@ jobs:
         if: always()
         with:
           files: |
-            app/test-results/*.xml
+            app/*.xml
             app/test-results/*.trx
             app/test-results/*.json
       
