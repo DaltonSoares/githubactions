@@ -11,6 +11,9 @@ jobs:
   build-and-test:
     name: Build and Test
     runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      contents: read
 
     steps:
       - name: Checkout código
@@ -29,7 +32,7 @@ jobs:
 
       - name: Executar testes
         working-directory: app
-        run: npm test -- --coverage
+        run: npm test:coverage
       
       #- name: Excluir resultados
       #  working-directory: app/test-results
@@ -37,7 +40,7 @@ jobs:
 
       - name: Publish Test Results / Publicar Resultado dos Testes
         uses: EnricoMi/publish-unit-test-result-action@v2
-        if: (!cancelled())
+        if: always()
         with:
           files: |
             test-results/**/*.xml
