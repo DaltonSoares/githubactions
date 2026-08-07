@@ -37,7 +37,7 @@ jobs:
       
       #- name: Excluir resultados
       #  working-directory: app/test-results
-      #  run: rm -rvf junit.xml
+      # # run: rm -rvf junit.xml
 
       - name: Publish Test Results / Publicar Resultado dos Testes
         uses: EnricoMi/publish-unit-test-result-action@v2
